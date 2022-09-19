@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+
+    --ff--kumbh: 'Kumbh Sans', sans-serif;
+    --fw--400: 400;
+    --fw--700: 700;
+    --fs--12: 12px;
+
+    /*texts*/
+    --very--dark: hsl(238, 29%, 16%);
+    --soft--red: hsl(14, 88%, 65%);
+    --very--dark--grayish--blue: hsl(237, 12%, 33%);
+    --dark--grayish--blue: hsl(240, 6%, 50%)
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--ff--kumbh);
+    line-height: 1.4;
+    font-size: var(--fs--12);
+    background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    height: 100vh;
+    overflow-x: hidden;
+    color: var(--very--dark--grayish--blue);
+}
+
+ul {
+    list-style: none;
+}
+img {
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+p{
+    font-weight: 400;
+}
+
+.accordion {
+    max-width: 960px;
+    border-radius: 5px;
+    margin: 150px auto;
+    background: #fff;
+    padding: 25px 48px 80px 400px; 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    position:relative;
+}
+.item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 32px;
+    row-gap: 16px;
+    padding: 15px;
+    align-items: center;
+}
+.illustration-mobile {
+    display: none;
+}
+.item .text:hover{
+    color:var(--soft--red);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.text:hover ~ .hidden-box {
+    display: block;
+}
+
+.divider{
+    width:100%;
+    border:1px solid hsl(240, 5%, 91%);
+    grid-column: 1 / span 3;
+}
+.item > h1 {
+    grid-column: 1 / span 3;
+    text-transform: uppercase;
+    font-weight: 700;
+    color:var(--very--dark);
+}
+
+.hidden-box {
+    grid-column: 1;
+    display: none;
+}
+
+
+
+
+ .illustration {
+    position:absolute;
+    height: 400px;
+    width: 400px;
+    left: 0;
+    top: 50%;
+    transform: translate(-10%, -50%);
+
+}
+
+ .illustration-box {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    left:0;
+    top:50%;
+    transform: translate(-50%, -40%);
+
+}
+ .item .icon {
+    width: 30px;
+    cursor: pointer;
+}
+
+@media(max-width:375px) {
+    .accordion {
+    padding: 32px;
+    }
+    
+    .accordion > img:first-of-type {
+        display: none;
+    }
+    .accordion > img:nth-of-type(2) {
+        display: block;
+        position: absolute;
+        top:-50px;
+        transform: translate(-5%, -50%);
+    }
+
+  
+    .accordion .item {
+        padding: 30px;
+    }
+
+
+    .illustration-box {
+        display: none;
+    }
+}
